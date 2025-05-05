@@ -1,0 +1,9 @@
+{
+	"name": "df-mvarshitha-dev",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "d582b77e-0766-4c14-801c-b5bd1f4acb19",
+		"tenantId": "c6432ef9-2257-46d1-8b41-3fe8d7d401cf"
+	}
+}

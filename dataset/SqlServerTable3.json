@@ -1,0 +1,25 @@
+{
+	"name": "SqlServerTable3",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "lnk_selfhost",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"x": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "sales",
+			"table": {
+				"value": "@dataset().x",
+				"type": "Expression"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
