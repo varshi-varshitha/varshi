@@ -10,8 +10,8 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "varshitha",
-				"fileSystem": "varshitha-container-dev"
+				"folderPath": "68 files",
+				"fileSystem": "varshitha1"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",

@@ -1,0 +1,9 @@
+{
+	"name": "db-varshitha1",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "46dd73c7-3f49-4930-b9de-0a429da37a37",
+		"tenantId": "51260900-a2f0-4642-bbc5-fd7634d88241"
+	}
+}

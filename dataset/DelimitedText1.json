@@ -10,32 +10,16 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "varshitha",
-				"fileSystem": "varshitha-container-dev"
+				"fileName": "Person_Address_001.csv",
+				"folderPath": "data",
+				"fileSystem": "varshitha1"
 			},
-			"columnDelimiter": ",",
+			"columnDelimiter": "|",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
-		"schema": [
-			{
-				"name": "AddressTypeID",
-				"type": "String"
-			},
-			{
-				"name": "Name",
-				"type": "String"
-			},
-			{
-				"name": "rowguid",
-				"type": "String"
-			},
-			{
-				"name": "ModifiedDate",
-				"type": "String"
-			}
-		]
+		"schema": []
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
 }

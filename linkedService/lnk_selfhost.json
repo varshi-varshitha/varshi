@@ -6,15 +6,15 @@
 		"type": "SqlServer",
 		"typeProperties": {
 			"server": "VARSHITHA",
-			"database": "AdventureWorks2022",
+			"database": "varshi",
 			"encrypt": "mandatory",
-			"trustServerCertificate": false,
+			"trustServerCertificate": true,
 			"authenticationType": "SQL",
 			"userName": "DRS1",
-			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI2NTRlNjY2Mi04ZDA2LTQwOTMtODYzNS1lM2Q4ODVkM2JmZjIiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIzY2QwMjcyZi1mOWQ2LTQ0NTQtYTNlZS03MzQ3MGEyNjM3MjQiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
 		},
 		"connectVia": {
-			"referenceName": "ir-selfhosted",
+			"referenceName": "ir-selfhost",
 			"type": "IntegrationRuntimeReference"
 		}
 	}

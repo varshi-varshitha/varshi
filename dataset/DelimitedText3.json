@@ -5,42 +5,29 @@
 			"referenceName": "lnk_adls",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"x": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "Person_EmailAddress_213.csv",
-				"folderPath": "varshitha",
-				"fileSystem": "varshitha-container-dev"
+				"fileName": {
+					"value": "@dataset().x",
+					"type": "Expression"
+				},
+				"folderPath": "data",
+				"fileSystem": "varshitha1"
 			},
-			"columnDelimiter": ",",
+			"columnDelimiter": "|",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
-		"schema": [
-			{
-				"name": "BusinessEntityID",
-				"type": "String"
-			},
-			{
-				"name": "EmailAddressID",
-				"type": "String"
-			},
-			{
-				"name": "EmailAddress",
-				"type": "String"
-			},
-			{
-				"name": "rowguid",
-				"type": "String"
-			},
-			{
-				"name": "ModifiedDate",
-				"type": "String"
-			}
-		]
+		"schema": []
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
 }
