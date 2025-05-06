@@ -1,0 +1,21 @@
+{
+	"name": "lnk_selfhost",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"server": "VARSHITHA",
+			"database": "varshi",
+			"encrypt": "mandatory",
+			"trustServerCertificate": true,
+			"authenticationType": "SQL",
+			"userName": "DRS1",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIzY2QwMjcyZi1mOWQ2LTQ0NTQtYTNlZS03MzQ3MGEyNjM3MjQiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "ir-selfhost",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
