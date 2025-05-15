@@ -1,5 +1,5 @@
 {
-	"name": "AzureSqlTable4",
+	"name": "AzureSqlTable16",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "lnk_azure",

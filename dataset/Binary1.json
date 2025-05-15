@@ -1,33 +1,20 @@
 {
-	"name": "DelimitedText7",
+	"name": "Binary1",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "lnk_adls",
 			"type": "LinkedServiceReference"
 		},
-		"parameters": {
-			"x": {
-				"type": "string"
-			}
-		},
 		"annotations": [],
-		"type": "DelimitedText",
+		"type": "Binary",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": {
-					"value": "@dataset().x",
-					"type": "Expression"
-				},
+				"fileName": "last file.ctl",
 				"folderPath": "68 files",
 				"fileSystem": "varshitha1"
-			},
-			"columnDelimiter": ",",
-			"escapeChar": "\\",
-			"firstRowAsHeader": true,
-			"quoteChar": "\""
-		},
-		"schema": []
+			}
+		}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
 }

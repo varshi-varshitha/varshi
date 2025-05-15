@@ -1,25 +1,17 @@
 {
-	"name": "DelimitedText7",
+	"name": "DelimitedText12",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "lnk_adls",
 			"type": "LinkedServiceReference"
-		},
-		"parameters": {
-			"x": {
-				"type": "string"
-			}
 		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": {
-					"value": "@dataset().x",
-					"type": "Expression"
-				},
-				"folderPath": "68 files",
+				"fileName": "Person_StateProvince_566.csv",
+				"folderPath": "data",
 				"fileSystem": "varshitha1"
 			},
 			"columnDelimiter": ",",
@@ -27,7 +19,12 @@
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
-		"schema": []
+		"schema": [
+			{
+				"name": "AddressTypeID|Name|rowguid|ModifiedDate",
+				"type": "String"
+			}
+		]
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
 }

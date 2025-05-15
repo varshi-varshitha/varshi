@@ -10,8 +10,8 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "varshitha/selfhost_server",
-				"fileSystem": "varshitha-container-dev"
+				"folderPath": "dataflow",
+				"fileSystem": "varshitha1"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",

@@ -1,5 +1,5 @@
 {
-	"name": "DelimitedText7",
+	"name": "DelimitedText14",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "lnk_adls",
@@ -19,7 +19,7 @@
 					"value": "@dataset().x",
 					"type": "Expression"
 				},
-				"folderPath": "68 files",
+				"folderPath": "cont",
 				"fileSystem": "varshitha1"
 			},
 			"columnDelimiter": ",",
@@ -27,7 +27,24 @@
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
-		"schema": []
+		"schema": [
+			{
+				"name": "DepartmentID",
+				"type": "String"
+			},
+			{
+				"name": "Name",
+				"type": "String"
+			},
+			{
+				"name": "GroupName",
+				"type": "String"
+			},
+			{
+				"name": "ModifiedDate",
+				"type": "String"
+			}
+		]
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
 }

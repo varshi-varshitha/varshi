@@ -1,0 +1,96 @@
+{
+	"name": "dataflow_SCD1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "DelimitedText11",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "AzureSqlTable14",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [
+				{
+					"name": "alterRow1"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          Index as string,",
+				"          {Account Id} as string,",
+				"          {Lead Owner} as string,",
+				"          {First Name} as string,",
+				"          {Last Name} as string,",
+				"          Company as string,",
+				"          {Phone 1} as string,",
+				"          {Phone 2} as string,",
+				"          {Email 1} as string,",
+				"          {Email 2} as string,",
+				"          Website as string,",
+				"          Source as string,",
+				"          {Deal Stage} as string,",
+				"          Notes as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source1",
+				"source1 alterRow(upsertIf(1==1)) ~> alterRow1",
+				"alterRow1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          id as integer,",
+				"          Account_Id as string,",
+				"          Lead_Owner as string,",
+				"          First_Name as string,",
+				"          Last_Name as string,",
+				"          Company as string,",
+				"          Phone_1 as string,",
+				"          Phone_2 as string,",
+				"          Email_1 as string,",
+				"          Email_2 as string,",
+				"          Website as string,",
+				"          Source as string,",
+				"          Deal_Stage as string,",
+				"          Notes as string",
+				"     ),",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:true,",
+				"     keys:['Company'],",
+				"     format: 'table',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'stopOnFirstError',",
+				"     mapColumn(",
+				"          id = Index,",
+				"          Account_Id = {Account Id},",
+				"          Lead_Owner = {Lead Owner},",
+				"          First_Name = {First Name},",
+				"          Last_Name = {Last Name},",
+				"          Company,",
+				"          Phone_1 = {Phone 1},",
+				"          Phone_2 = {Phone 2},",
+				"          Email_1 = {Email 1},",
+				"          Email_2 = {Email 2},",
+				"          Website,",
+				"          Source,",
+				"          Deal_Stage = {Deal Stage},",
+				"          Notes",
+				"     )) ~> sink1"
+			]
+		}
+	}
+}

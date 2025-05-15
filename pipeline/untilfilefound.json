@@ -1,13 +1,74 @@
 {
-	"name": "68_files",
+	"name": "untilfilefound",
 	"properties": {
 		"activities": [
 			{
-				"name": "Get Metadata1",
+				"name": "Until1",
+				"type": "Until",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"expression": {
+						"value": "@equals(variables('filefound'),true)",
+						"type": "Expression"
+					},
+					"activities": [
+						{
+							"name": "Get Metadata1",
+							"type": "GetMetadata",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"dataset": {
+									"referenceName": "Binary2",
+									"type": "DatasetReference"
+								},
+								"fieldList": [
+									"exists"
+								],
+								"storeSettings": {
+									"type": "AzureBlobFSReadSettings",
+									"recursive": true,
+									"enablePartitionDiscovery": false
+								},
+								"formatSettings": {
+									"type": "BinaryReadSettings"
+								}
+							}
+						},
+						{
+							"name": "Wait1",
+							"type": "Wait",
+							"dependsOn": [
+								{
+									"activity": "Get Metadata1",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"userProperties": [],
+							"typeProperties": {
+								"waitTimeInSeconds": 120
+							}
+						}
+					],
+					"timeout": "0.00:05:00"
+				}
+			},
+			{
+				"name": "Get Metadata2",
 				"type": "GetMetadata",
 				"dependsOn": [
 					{
-						"activity": "Validation1",
+						"activity": "Until1",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -23,7 +84,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataset": {
-						"referenceName": "DelimitedText6",
+						"referenceName": "DelimitedText13",
 						"type": "DatasetReference"
 					},
 					"fieldList": [
@@ -44,7 +105,7 @@
 				"type": "ForEach",
 				"dependsOn": [
 					{
-						"activity": "Get Metadata1",
+						"activity": "Get Metadata2",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -53,7 +114,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('Get Metadata1').output.childItems",
+						"value": "@activity('Get Metadata2').output.childItems",
 						"type": "Expression"
 					},
 					"activities": [
@@ -98,7 +159,7 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "DelimitedText7",
+									"referenceName": "DelimitedText15",
 									"type": "DatasetReference",
 									"parameters": {
 										"x": {
@@ -110,11 +171,11 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "AzureSqlTable4",
+									"referenceName": "AzureSqlTable16",
 									"type": "DatasetReference",
 									"parameters": {
 										"y": {
-											"value": "@substring(item().name,0,lastindexof(item().name,'.'))",
+											"value": "@substring(item().name,0,lastindexof(item().name,'_'))",
 											"type": "Expression"
 										}
 									}
@@ -123,24 +184,16 @@
 						}
 					]
 				}
-			},
-			{
-				"name": "Validation1",
-				"type": "Validation",
-				"dependsOn": [],
-				"userProperties": [],
-				"typeProperties": {
-					"dataset": {
-						"referenceName": "Binary1",
-						"type": "DatasetReference"
-					},
-					"timeout": "0.12:00:00",
-					"sleep": 300
-				}
 			}
 		],
+		"variables": {
+			"filefound": {
+				"type": "Boolean",
+				"defaultValue": true
+			}
+		},
 		"annotations": [],
-		"lastPublishTime": "2025-05-07T10:59:15Z"
+		"lastPublishTime": "2025-05-15T09:16:45Z"
 	},
 	"type": "Microsoft.DataFactory/factories/pipelines"
 }

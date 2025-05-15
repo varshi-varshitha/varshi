@@ -1,24 +1,16 @@
 {
-	"name": "AzureSqlTable4",
+	"name": "AzureSqlTable8",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "lnk_azure",
 			"type": "LinkedServiceReference"
-		},
-		"parameters": {
-			"y": {
-				"type": "string"
-			}
 		},
 		"annotations": [],
 		"type": "AzureSqlTable",
 		"schema": [],
 		"typeProperties": {
 			"schema": "dbo",
-			"table": {
-				"value": "@dataset().y",
-				"type": "Expression"
-			}
+			"table": "pipeline_log"
 		}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"

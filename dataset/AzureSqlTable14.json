@@ -1,0 +1,75 @@
+{
+	"name": "AzureSqlTable14",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "lnk_azure",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Account_Id",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Lead_Owner",
+				"type": "nvarchar"
+			},
+			{
+				"name": "First_Name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Last_Name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Company",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Phone_1",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Phone_2",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Email_1",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Email_2",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Website",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Source",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Deal_Stage",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Notes",
+				"type": "text"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Leads"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

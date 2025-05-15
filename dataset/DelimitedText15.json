@@ -1,5 +1,5 @@
 {
-	"name": "DelimitedText7",
+	"name": "DelimitedText15",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "lnk_adls",
@@ -19,15 +19,20 @@
 					"value": "@dataset().x",
 					"type": "Expression"
 				},
-				"folderPath": "68 files",
+				"folderPath": "cont",
 				"fileSystem": "varshitha1"
 			},
-			"columnDelimiter": ",",
+			"columnDelimiter": "|",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
-		"schema": []
+		"schema": [
+			{
+				"name": "ContactTypeID|Name|ModifiedDate",
+				"type": "String"
+			}
+		]
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
 }
