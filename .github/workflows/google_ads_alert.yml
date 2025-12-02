@@ -1,0 +1,25 @@
+name: Daily Google Ads Alert
+
+on:
+  schedule:
+    - cron: "0 3 * * *"      # 9 AM IST
+  workflow_dispatch:
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: pip install mysql-connector-python
+
+      - name: Run alert script
+        run: python alert_script.py
